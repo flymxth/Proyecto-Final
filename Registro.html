@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: sans-serif;
+        }
+
+        .title {
+            text-align: center;
+            padding: 50px 0 20px;
+        }
+
+        .title h1 {
+            margin: 0;
+            color: #333;
+            text-transform: uppercase;
+            font-size: 26px;
+        }
+
+        .container {
+            width: 60%;
+            max-width: 800px;
+            height: 700px;
+            background: #fff;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .container .left {
+            width: 50%;
+            background: url('imagenes/GatitoRegister.jpeg') no-repeat center center;
+            background-size: contain;
+            background-color: #fff; /* Fondo blanco en caso de que la imagen no ocupe todo */
+        }
+
+
+
+        .container .right {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .formBox {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .formBox p {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .formBox a {
+            text-align: center;
+        }
+
+        .formBox input[type="text"],
+        .formBox input[type="password"],
+        .formBox input[type="email"],
+        .formBox input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .formBox input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .formBox input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .formBox a {
+            display: block;
+            margin-top: 15px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .formBox a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                flex-direction: column;
+                height: auto; 
+            }
+
+            .container .left,
+            .container .right {
+                width: 100%;
+                height: 750px;
+            }
+
+            .formBox {
+                padding: 40px 20px;
+            }
+
+            .title h1 {
+                font-size: 22px;
+            }
+        }
+</style>
+</head>
+<body>
+    <div class="title"><h1>Sign In Form</h1></div>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <div class="formBox">
+                <form action="registro.php" method="post" onsubmit="validarFormulario(); return false;">
+                    <p>Nombre</p>
+                    <input type="text" id="txtNombre" name="txtNombre" placeholder="Nombre">
+                    <span id="nombreError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa tu nombre</span>
+                
+                    <p>Apellidos</p>
+                    <input type="text" id="txtApellidos" name="txtApellidos" placeholder="Apellidos">
+                    <span id="apellidosError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa tus apellidos</span>
+                
+                    <p>Nombre Usuario</p>
+                    <input type="text" id="txtUsuario" name="txtUsuario" placeholder="Usuario">
+                    <span id="usuarioError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa un nombre de usuario</span>
+                
+                    <p>Correo Electrónico</p>
+                    <input type="email" id="txtEmail" name="txtEmail" placeholder="Email">
+                    <span id="emailError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa tu correo electrónico</span>
+                
+                    <p>Fecha de Nacimiento</p>
+                    <input type="date" id="txtFecha" name="txtFecha">
+                    <span id="fechaError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa tu fecha de nacimiento</span>
+                
+                    <p>Password</p>
+                    <input type="password" id="txtPassword" name="txtPassword" placeholder="Contraseña">
+                    <span id="passwordError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa una contraseña</span>
+                
+                    <br>
+                    <input type="submit" name="button" value="Registrar">
+                    <a href="index.html">Volver</a>
+                
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function validarFormulario() {
+            // Array de campos a validar
+            let campos = [
+                { id: "txtNombre", errorId: "nombreError", mensaje: "Por favor, ingresa tu nombre" },
+                { id: "txtApellidos", errorId: "apellidosError", mensaje: "Por favor, ingresa tus apellidos" },
+                { id: "txtUsuario", errorId: "usuarioError", mensaje: "Por favor, ingresa un nombre de usuario" },
+                { id: "txtEmail", errorId: "emailError", mensaje: "Por favor, ingresa tu correo electrónico" },
+                { id: "txtFecha", errorId: "fechaError", mensaje: "Por favor, ingresa tu fecha de nacimiento" },
+                { id: "txtPassword", errorId: "passwordError", mensaje: "Por favor, ingresa una contraseña" }
+            ];
+    
+            let formCompleto = true; // Bandera para verificar si todos los campos están llenos
+    
+            // Validación de cada campo
+            campos.forEach(campo => {
+                let valor = document.getElementById(campo.id).value.trim();
+                if (valor === "") {
+                    document.getElementById(campo.errorId).style.display = "block";
+                    document.getElementById(campo.errorId).textContent = campo.mensaje;
+                    formCompleto = false;
+                } else {
+                    document.getElementById(campo.errorId).style.display = "none";
+                }
+            });
+    
+            if (formCompleto) {
+                document.querySelector("form").submit(); // Envía el formulario si está completo
+            }
+        }
+    </script>
+</body>
+</html>
