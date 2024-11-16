@@ -53,8 +53,69 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
             }
 
+        .text-info {
+          background-color: #000;
+          text-align: center;
+          padding: 60px;
+        }
 
-        
+        .text-info h1 {
+          color: #fff;
+          font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .text-info p {
+          color: #fff;
+        }
+
+        footer {
+          text-align: center;
+          min-height: 500px;
+          background-color: #000;
+          padding: 40px;
+        }
+
+        .footer-texto {
+          font-size: 1.5rem;
+          padding: 20px;
+          margin-bottom: 30px;
+          color: #fff;
+      }
+
+      .iconos-redes-sociales a {
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2px;
+          margin: 10px;
+          border: 2px solid white;
+          border-radius: 50%;
+          transition: all 0.2s ease-in;
+      }
+
+      .iconos-redes-sociales i {
+        color: white;
+        font-size: 1.5rem;
+        transition: all 0.2s ease-in;
+      }
+
+      .iconos-redes-sociales a:hover {
+        background-color: white;
+        border: 2px solid rgb(13, 110, 253);
+      }
+
+      .iconos-redes-sociales a:hover i {
+        color: black;
+      }
+
+      .derechos-de-autor {
+          font-size: 15px;
+          color: #aeaeae;
+          padding: 20px;
+      }
+          
     </style>
 
     <title>Refugio | Pagina principal</title>
@@ -135,8 +196,74 @@
           </div>
         </div>
       </div>
-      
 
+      
+      <br>
+      <br>
+
+     
+      <div class="text-info">
+        <h1>Refugio</h1>
+        <br>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloribus, necessitatibus rem a, ad officiis eligendi perferendis temporibus blanditiis eaque, quod assumenda? Qui, quo harum. Recusandae sequi reprehenderit ex repellendus quasi culpa omnis soluta corporis repudiandae incidunt veritatis commodi minima, libero earum ea laudantium. Suscipit rem et ea voluptas tempora!
+        </p>
+      </div>
+
+      <br>
+      <br>
+
+      <section>
+        <div id="carouselExampleRide" style="padding: 40px;" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="imagenes/PerroCarrusel1.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/PerroCarrusel2.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/PerroCarrusel3.jpeg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <br>
+      <br>
+
+      <div style="width: 100%; height: 300px; display: flex; justify-content: center; align-items: center;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.9820509192073!2d-101.17654242601823!3d20.13479641788419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cfac16cd715af%3A0xb4100ef17be56eca!2sRefugio%20Animal%20Alfa%20A.%20C.!5e0!3m2!1ses!2smx!4v1731776348863!5m2!1ses!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"  referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <br>
+      <br>
+
+      <footer class="seccion-oscura d-flex-column align-items-center justify-content-center">
+        <p class="footer-texto text-center">Estamos para ayudarte con tus mascotas</p>
+        <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+            <a href="https://github.com/flymxth/PAGINAS-COMPLETAS.git" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.facebook.com/refugioanimalalfaac" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-facebook"></i>
+          </a>
+            <a href="mailto:" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-envelope-check-fill"></i>
+            </a>
+        </div>
+        <div class="derechos-de-autor">Creado por Luis Antonio Custodio Guzman (2024) &#169;</div>
+    </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>

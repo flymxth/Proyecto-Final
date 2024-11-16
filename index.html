@@ -137,16 +137,25 @@
             <div class="formBox">
                 <form action="sesion.php" method="post" onsubmit="return validarFormulario()">
                     <p>Usuario</p>
-                    <input type="text" id="txtUsuario" name="txtUsuario" placeholder="Usuario">
-                    <span id="usuarioError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa un usuario</span>
+                        <input type="text" id="txtUsuario" name="txtUsuario" placeholder="Usuario">
+                        <span id="usuarioError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa un usuario</span>
                 
                     <p>Contraseña</p>
-                    <input type="password" id="txtPassword" name="txtPassword" placeholder="Contraseña">
-                    <span id="passwordError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa una contraseña</span>
-                    <br>
-                    <br>
-                    <input type="submit" name="button" value="Entrar">
-                    <a href="Registro.html">Regístrate</a>
+                        <input type="password" id="txtPassword" name="txtPassword" placeholder="Contraseña">
+                        <span id="passwordError" style="color: red; display: none; font-size: 12px;">Por favor, ingresa una contraseña</span>
+                        <input type="checkbox" id="chk">Ver contraseña
+                        <br><br>
+                        <input type="submit" name="button" value="Entrar">
+                        <a href="Registro.html">Regístrate</a>
+
+                        <script>
+                            const txtPassword = document.getElementById("txtPassword");
+                            const chk = document.getElementById("chk");
+
+                            chk.onchange = function() {
+                                txtPassword.type = chk.checked ? "text" : "password";
+                            };
+                        </script>
                 </form>
             </div>
         </div>
